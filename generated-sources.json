@@ -54,15 +54,15 @@
         "dest": ".flatpak-dub/unit-threaded-0.7.55"
     },
     {
-        "type": "file",
-        "url": "data:%5B%7B%22name%22%3A%20%22allegro%22%2C%20%22version%22%3A%20%224.0.4%2B5.2.0%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/allegro-4.0.4%2B5.2.0%22%7D%2C%20%7B%22name%22%3A%20%22bolts%22%2C%20%22version%22%3A%20%221.3.1%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/bolts-1.3.1%22%7D%2C%20%7B%22name%22%3A%20%22derelict-enet%22%2C%20%22version%22%3A%20%224.2.0%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/derelict-enet-4.2.0%22%7D%2C%20%7B%22name%22%3A%20%22derelict-util%22%2C%20%22version%22%3A%20%223.0.0-beta.2%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/derelict-util-3.0.0-beta.2%22%7D%2C%20%7B%22name%22%3A%20%22enumap%22%2C%20%22version%22%3A%20%220.4.2%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/enumap-0.4.2%22%7D%2C%20%7B%22name%22%3A%20%22optional%22%2C%20%22version%22%3A%20%221.3.0%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/optional-1.3.0%22%7D%2C%20%7B%22name%22%3A%20%22sdlang-d%22%2C%20%22version%22%3A%20%220.10.6%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/sdlang-d-0.10.6%22%7D%2C%20%7B%22name%22%3A%20%22taggedalgebraic%22%2C%20%22version%22%3A%20%220.11.22%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/taggedalgebraic-0.11.22%22%7D%2C%20%7B%22name%22%3A%20%22unit-threaded%22%2C%20%22version%22%3A%20%220.7.55%22%2C%20%22path%22%3A%20%22%40builddir%40/.flatpak-dub/unit-threaded-0.7.55%22%7D%5D",
+        "type": "inline",
+        "contents": "[{\"name\": \"allegro\", \"version\": \"4.0.4+5.2.0\", \"path\": \".flatpak-dub/allegro-4.0.4+5.2.0\"}, {\"name\": \"bolts\", \"version\": \"1.3.1\", \"path\": \".flatpak-dub/bolts-1.3.1\"}, {\"name\": \"derelict-enet\", \"version\": \"4.2.0\", \"path\": \".flatpak-dub/derelict-enet-4.2.0\"}, {\"name\": \"derelict-util\", \"version\": \"3.0.0-beta.2\", \"path\": \".flatpak-dub/derelict-util-3.0.0-beta.2\"}, {\"name\": \"enumap\", \"version\": \"0.4.2\", \"path\": \".flatpak-dub/enumap-0.4.2\"}, {\"name\": \"optional\", \"version\": \"1.3.0\", \"path\": \".flatpak-dub/optional-1.3.0\"}, {\"name\": \"sdlang-d\", \"version\": \"0.10.6\", \"path\": \".flatpak-dub/sdlang-d-0.10.6\"}, {\"name\": \"taggedalgebraic\", \"version\": \"0.11.22\", \"path\": \".flatpak-dub/taggedalgebraic-0.11.22\"}, {\"name\": \"unit-threaded\", \"version\": \"0.7.55\", \"path\": \".flatpak-dub/unit-threaded-0.7.55\"}]",
         "dest": ".dub/packages",
         "dest-filename": "local-packages.json"
     },
     {
         "type": "shell",
         "commands": [
-            "sed \"s|@builddir@|$(pwd)|g\" -i .dub/packages/local-packages.json"
+            "jq 'map(.path = ([$ENV.PWD] + (.path | split(\"/\")) | join(\"/\")))' <<<$(<.dub/packages/local-packages.json) > .dub/packages/local-packages.json"
         ]
     }
 ]

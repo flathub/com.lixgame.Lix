@@ -68,15 +68,15 @@
                 "cp -ar data/ images/ levels/ music/ ${FLATPAK_DEST}/share/lix",
                 "install -Dm644 doc/lix.6 ${FLATPAK_DEST}%{_mandir}/man6/lix.6",
                 "install -Dm644 data/images/lix_logo.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
-                "install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
-                "install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+                "install -Dm644 data/desktop/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+                "install -Dm644 data/desktop/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/SimonN/LixD.git",
-                    "commit": "ed4cba87972bee3b9f25efde3e66231608d61e7e",
-                    "tag": "v0.9.47"
+                    "commit": "2688a426fe4d003540b3c8e876346bc74c92143d",
+                    "tag": "v0.9.48"
                 },
                 {
                     "type": "shell",
@@ -90,15 +90,7 @@
                     "sha256": "8ae2323995ac8792f720e80130220a0e85da32269e25e5b9add8c586c16ef392",
                     "strip-components": 0
                 },
-                "generated-sources.json",
-                {
-                    "type": "file",
-                    "path": "com.lixgame.Lix.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "com.lixgame.Lix.metainfo.xml"
-                }
+                "generated-sources.json"
             ]
         }
     ]
