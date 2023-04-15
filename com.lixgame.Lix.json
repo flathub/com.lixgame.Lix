@@ -90,8 +90,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "http://www.lixgame.com/dow/lix-music.zip",
-                    "sha256": "8ae2323995ac8792f720e80130220a0e85da32269e25e5b9add8c586c16ef392",
+                    "url": "https://www.lixgame.com/dow/lix-music.zip",
+                    "sha256": "23ef8c20c5bf1674096e8b20ed9011669a9ad66f1135c64198e00e93aeb1f657",
                     "strip-components": 0
                 },
                 "generated-sources.json"
