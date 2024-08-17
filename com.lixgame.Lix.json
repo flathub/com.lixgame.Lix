@@ -76,8 +76,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/SimonN/LixD.git",
-                    "commit": "1fb527932617878d1f9c6d0baabafc28ef6e57fc",
-                    "tag": "v0.10.25",
+                    "commit": "7a322fd05d807aebf1c66d02b558f0a35b4144e2",
+                    "tag": "v0.10.26",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
