@@ -1,3 +1,4 @@
 {
-  "only-arches": ["x86_64"]
+  "only-arches": ["x86_64"],
+  "end-of-life": "DMD is no longer maintained on Flathub."
 }
