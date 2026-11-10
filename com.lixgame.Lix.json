@@ -45,7 +45,7 @@
                 "-DWANT_DOCS=OFF",
                 "-DWANT_EXAMPLES=OFF",
                 "-DWANT_TESTS=OFF",
-		"-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
             "sources": [
                 {
