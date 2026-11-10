@@ -1,7 +1,7 @@
 {
     "app-id": "com.lixgame.Lix",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "22.08",
+    "runtime-version": "26.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.dmd"
@@ -44,7 +44,8 @@
                 "-DWANT_DEMO=OFF",
                 "-DWANT_DOCS=OFF",
                 "-DWANT_EXAMPLES=OFF",
-                "-DWANT_TESTS=OFF"
+                "-DWANT_TESTS=OFF",
+		"-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
             "sources": [
                 {
@@ -93,7 +94,7 @@
                     "type": "archive",
                     "url": "https://www.lixgame.com/dow/lix-music.zip",
                     "sha256": "23ef8c20c5bf1674096e8b20ed9011669a9ad66f1135c64198e00e93aeb1f657",
-                    "strip-components": 0
+                    "dest": "music"
                 },
                 "generated-sources.json"
             ]
