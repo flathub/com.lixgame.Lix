@@ -4,7 +4,8 @@
     "runtime-version": "26.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.dmd"
+        "org.freedesktop.Sdk.Extension.ldc",
+        "org.freedesktop.Sdk.Extension.llvm22"
     ],
     "command": "lix",
     "finish-args": [
@@ -59,7 +60,9 @@
             "name": "lix",
             "buildsystem": "simple",
             "build-options": {
-                "append-path": "/usr/lib/sdk/dmd/bin"
+                "append-path": "/usr/lib/sdk/ldc/bin",
+                "prepend-path": "/usr/lib/sdk/llvm22/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm22/lib"
             },
             "build-commands": [
                 "dub build --skip-registry=all -f -b releaseXDG"
